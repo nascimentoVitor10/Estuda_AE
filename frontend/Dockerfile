@@ -1,0 +1,16 @@
+FROM node:18-alpine AS build
+WORKDIR /app
+
+# Configura o npm para ignorar erros de certificado autoassinado da rede local/universitária
+RUN npm config set strict-ssl false
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

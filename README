@@ -1,0 +1,21 @@
+Estuda-Ae/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py          # Configuração do FastAPI e rotas principais
+│   │   ├── config.py        # Configurações e variáveis de ambiente (Pydantic)
+│   │   ├── services.py      # Lógica de integração com a IA (LLM)
+│   │   └── schemas.py       # Validação de dados (Pydantic Models)
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/      # Componentes visuais (Form, GuideView, Loading)
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css        # Tailwind CSS imports
+│   ├── Dockerfile
+│   ├── package.json
+│   └── vite.config.js
+├── docker-compose.yml
+└── README.md
